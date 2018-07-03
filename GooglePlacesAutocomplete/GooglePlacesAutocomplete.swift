@@ -153,7 +153,7 @@ open class GooglePlacesAutocomplete: UINavigationController {
     gpaViewController.navigationItem.title = "Enter Address"
   }
 
-  func close() {
+  @objc func close() {
     placeDelegate?.placeViewClosed?()
   }
 
@@ -202,7 +202,7 @@ open class GooglePlacesAutocompleteContainer: UIViewController {
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
   }
 
-  func keyboardWasShown(_ notification: Notification) {
+  @objc func keyboardWasShown(_ notification: Notification) {
     if isViewLoaded && view.window != nil {
       guard let info = notification.userInfo else {
         print("No user info on notification found.")
@@ -217,7 +217,7 @@ open class GooglePlacesAutocompleteContainer: UIViewController {
     }
   }
 
-  func keyboardWillBeHidden(_ notification: Notification) {
+  @objc func keyboardWillBeHidden(_ notification: Notification) {
     if isViewLoaded && view.window != nil {
       self.tableView.contentInset = UIEdgeInsets.zero
       self.tableView.scrollIndicatorInsets = UIEdgeInsets.zero
