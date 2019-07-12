@@ -164,19 +164,19 @@ open class GooglePlacesAutocomplete: UINavigationController {
 }
 
 // MARK: - GooglePlacesAutocompleteContainer
-open class GooglePlacesAutocompleteContainer: UIViewController {
-  @IBOutlet open weak var searchBar: UISearchBar!
+public class GooglePlacesAutocompleteContainer: UIViewController {
+  @IBOutlet public weak var searchBar: UISearchBar!
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var topConstraint: NSLayoutConstraint!
 
-  var delegate: GooglePlacesAutocompleteDelegate?
-  var apiKey: String?
-  var places = [Place]()
-  var placeType: PlaceType = .all
-  var locationBias: LocationBias?
-  var extraParams = [String: String]()
+  public var delegate: GooglePlacesAutocompleteDelegate?
+  public var apiKey: String?
+  public var places = [Place]()
+  public var placeType: PlaceType = .all
+  public var locationBias: LocationBias?
+  public var extraParams = [String: String]()
 
-  convenience init(apiKey: String, placeType: PlaceType = .all) {
+  public convenience init(apiKey: String, placeType: PlaceType = .all) {
     let bundle = Bundle(for: GooglePlacesAutocompleteContainer.self)
 
     self.init(nibName: "GooglePlacesAutocomplete", bundle: bundle)
